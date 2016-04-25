@@ -43,11 +43,25 @@ public class PlayerScript: MonoBehaviour {
 			Mathf.Clamp (transform.position.x, leftBorder, rightBorder),
 			Mathf.Clamp (transform.position.y, topBorder, bottomBorder),
 			transform.position.z);
+
+		bool shoot = Input.GetButtonDown ("Fire1");
+		shoot |= Input.GetButtonDown ("Fire2");
+
+		if (shoot) {
+			FiringScript weapon = GetComponent<FiringScript> ();
+			if (weapon != null) {
+				weapon.Attack (false);
+			}
+		}
 	}
 
 	void FixedUpdate()
 	{
 		GetComponent<Rigidbody2D>().velocity = movement;
+	}
+
+	void Awake(){
+		LevelManager.setPreviousLevel (Application.loadedLevelName);
 	}
 
 }

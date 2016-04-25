@@ -28,13 +28,22 @@ public class SelectMenu : MonoBehaviour {
 			buttonHeight
 		);
 
-		if(GUI.Button (buttonRectS1, "Stage 3")) {
+		Rect buttonRectS4 = new Rect (
+			Screen.width / 2 - (buttonWidth / 2),
+			(2 * Screen.height / 3) - (buttonHeight / 2) - 240,
+			buttonWidth,
+			buttonHeight
+		);
+
+		if (GUI.Button (buttonRectS1, "Stage 4")) {
+			Application.LoadLevel ("Stage4");
+		}else if(GUI.Button (buttonRectS2, "Stage 3")) {
 			Application.LoadLevel ("Stage3");
-		} else if(GUI.Button (buttonRectS2, "Stage 2")) {
+		} else if(GUI.Button (buttonRectS3, "Stage 2")) {
 			Application.LoadLevel ("Stage2");
-		} else if(GUI.Button (buttonRectS3, "Stage 1")) {
+		} else if(GUI.Button (buttonRectS4, "Stage 1")) {
 			Application.LoadLevel ("Stage1");
-		}
+		} 
 
 	}
 }

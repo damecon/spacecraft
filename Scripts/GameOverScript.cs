@@ -22,7 +22,7 @@ public class GameOverScript : MonoBehaviour {
 		);
 			
 		if(GUI.Button (buttonRectRY, "Retry")) {
-			Application.LoadLevel ("Stage1");
+			Application.LoadLevel (LevelManager.getPreviousLevel());
 		} else if(GUI.Button (buttonRectBM, "Back to Menu")) {
 			Application.LoadLevel ("Menu");
 		}
